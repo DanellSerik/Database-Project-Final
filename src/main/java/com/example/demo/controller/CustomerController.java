@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.Address;
 import com.example.demo.Customer;
+import com.example.demo.Employee;
 import com.example.demo.SignInService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,6 +33,21 @@ public class CustomerController {
             System.out.println("Error adding customer: " + e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error adding customer: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("getEmployee/{id}/{type}")
+    public Customer getCustomerById(@PathVariable String id, @PathVariable String type) {
+        try {
+            Customer customer = signInService.getCustomer(id, type);
+            if (customer == null) {
+                throw new RuntimeException("Customer not found.");
+            }
+            return customer;
+        } catch (Exception e) {
+            // Log the error and return a user-friendly message
+            System.out.println("Error fetching customer: " + e.getMessage());
+            throw new RuntimeException("Error fetching customer: " + e.getMessage());
         }
     }
 

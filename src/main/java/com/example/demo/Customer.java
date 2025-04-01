@@ -1,14 +1,29 @@
 package com.example.demo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Date;
 
 public class Customer {
-    private String customerId;
-    private String idType;
-    private String customerEmail;
+    @JsonProperty("firstname")
     private String firstName;
+
+    @JsonProperty("lastname")
     private String lastName;
+
+    @JsonProperty("idtype")
+    private String idType;
+
+    @JsonProperty("idnumber")
+    private String customerId;
+
+    @JsonProperty("email")
+    private String customerEmail;
+
+    @JsonProperty("address")
     private Address address;
+
+    @JsonProperty("registrationDate")
     private Date dateOfRegistration;
 
     // Constructor
