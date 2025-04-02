@@ -24,7 +24,7 @@ values ('cbhotel_1', 20, 4, '(613) 555-1029',
 insert into room
 values (101, 'cbhotel_1', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_1', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_1', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_1', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -69,7 +69,7 @@ values ('cbhotel_2', 15, 3, '(613) 555-1024',
 insert into room
 values (101, 'cbhotel_2', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_2', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_2', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_2', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -104,7 +104,7 @@ values ('cbhotel_3', 20, 3.5, '(613) 555-1025',
 insert into room
 values (101, 'cbhotel_3', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_3', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_3', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_3', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -149,7 +149,7 @@ values ('cbhotel_4', 10, 4, '(613) 555-1026',
 insert into room
 values (101, 'cbhotel_4', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_4', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_4', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_4', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -174,7 +174,7 @@ values ('cbhotel_5', 15, 2, '(613) 555-1027',
 insert into room
 values (101, 'cbhotel_5', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_5', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_5', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_5', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -209,7 +209,7 @@ values ('cbhotel_6', 30, 3.5, '(613) 555-1028',
 insert into room
 values (101, 'cbhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -239,7 +239,7 @@ values (305, 'cbhotel_6', 159.80, null, true, '{TV, air conditioner}', 3, 'sea')
 insert into room
 values (401, 'cbhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (402, 'cbhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (402, 'cbhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (403, 'cbhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -274,7 +274,7 @@ values ('cbhotel_7', 15, 4, '(613) 555-1031',
 insert into room
 values (101, 'cbhotel_7', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_7', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_7', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_7', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -309,7 +309,7 @@ values ('cbhotel_8', 10, 5, '(613) 555-1030',
 insert into room
 values (101, 'cbhotel_8', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'cbhotel_8', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'cbhotel_8', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'cbhotel_8', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -335,7 +335,7 @@ values ('tlhotel_1', 20, 3, '(613) 555-2029',
 insert into room
 values (101, 'tlhotel_1', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_1', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_1', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_1', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -380,7 +380,7 @@ values ('tlhotel_2', 15, 2.5, '(613) 555-2024',
 insert into room
 values (101, 'tlhotel_2', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_2', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_2', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_2', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -415,7 +415,7 @@ values ('tlhotel_3', 20, 3.5, '(613) 555-2025',
 insert into room
 values (101, 'tlhotel_3', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_3', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_3', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_3', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -460,7 +460,7 @@ values ('tlhotel_4', 10, 4, '(613) 555-2026',
 insert into room
 values (101, 'tlhotel_4', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_4', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_4', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_4', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -485,7 +485,7 @@ values ('tlhotel_5', 15, 3, '(613) 555-2027',
 insert into room
 values (101, 'tlhotel_5', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_5', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_5', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_5', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -520,7 +520,7 @@ values ('tlhotel_6', 30, 3.5, '(613) 555-2028',
 insert into room
 values (101, 'tlhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -550,7 +550,7 @@ values (305, 'tlhotel_6', 159.80, null, true, '{TV, air conditioner}', 3, 'sea')
 insert into room
 values (401, 'tlhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (402, 'tlhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (402, 'tlhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (403, 'tlhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -585,7 +585,7 @@ values ('tlhotel_7', 15, 3.5, '(613) 555-2031',
 insert into room
 values (101, 'tlhotel_7', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_7', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_7', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_7', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -620,7 +620,7 @@ values ('tlhotel_8', 10, 3, '(613) 555-2030',
 insert into room
 values (101, 'tlhotel_8', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'tlhotel_8', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'tlhotel_8', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'tlhotel_8', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -646,7 +646,7 @@ values ('fmnhotel_1', 20, 4, '(613) 555-3029',
 insert into room
 values (101, 'fmnhotel_1', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_1', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_1', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_1', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -691,7 +691,7 @@ values ('fmnhotel_2', 15, 4.5, '(613) 555-3024',
 insert into room
 values (101, 'fmnhotel_2', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_2', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_2', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_2', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -726,7 +726,7 @@ values ('fmnhotel_3', 20, 3.5, '(613) 555-3025',
 insert into room
 values (101, 'fmnhotel_3', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_3', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_3', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_3', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -771,7 +771,7 @@ values ('fmnhotel_4', 10, 4, '(613) 555-3026',
 insert into room
 values (101, 'fmnhotel_4', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_4', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_4', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_4', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -796,7 +796,7 @@ values ('fmnhotel_5', 15, 4, '(613) 555-3027',
 insert into room
 values (101, 'fmnhotel_5', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_5', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_5', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_5', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -831,7 +831,7 @@ values ('fmnhotel_6', 30, 5, '(613) 555-3028',
 insert into room
 values (101, 'fmnhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -861,7 +861,7 @@ values (305, 'fmnhotel_6', 159.80, null, true, '{TV, air conditioner}', 3, 'sea'
 insert into room
 values (401, 'fmnhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (402, 'fmnhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (402, 'fmnhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (403, 'fmnhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -896,7 +896,7 @@ values ('fmnhotel_7', 15, 4.5, '(613) 555-3031',
 insert into room
 values (101, 'fmnhotel_7', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_7', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_7', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_7', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -931,7 +931,7 @@ values ('fmnhotel_8', 10, 3, '(613) 555-3030',
 insert into room
 values (101, 'fmnhotel_8', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'fmnhotel_8', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'fmnhotel_8', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'fmnhotel_8', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -957,7 +957,7 @@ values ('ddhotel_1', 20, 4, '(613) 555-4029',
 insert into room
 values (101, 'ddhotel_1', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_1', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_1', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_1', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1002,7 +1002,7 @@ values ('ddhotel_2', 15, 3, '(613) 555-4024',
 insert into room
 values (101, 'ddhotel_2', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_2', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_2', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_2', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1037,7 +1037,7 @@ values ('ddhotel_3', 20, 3.5, '(613) 555-4025',
 insert into room
 values (101, 'ddhotel_3', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_3', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_3', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_3', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1082,7 +1082,7 @@ values ('ddhotel_4', 10, 4, '(613) 555-4026',
 insert into room
 values (101, 'ddhotel_4', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_4', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_4', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_4', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1107,7 +1107,7 @@ values ('ddhotel_5', 15, 2, '(613) 555-4027',
 insert into room
 values (101, 'ddhotel_5', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_5', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_5', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_5', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1142,7 +1142,7 @@ values ('ddhotel_6', 30, 3.5, '(613) 555-4028',
 insert into room
 values (101, 'ddhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1172,7 +1172,7 @@ values (305, 'ddhotel_6', 159.80, null, true, '{TV, air conditioner}', 3, 'sea')
 insert into room
 values (401, 'ddhotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (402, 'ddhotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (402, 'ddhotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (403, 'ddhotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1207,7 +1207,7 @@ values ('ddhotel_7', 15, 4, '(613) 555-4031',
 insert into room
 values (101, 'ddhotel_7', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_7', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_7', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_7', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1242,7 +1242,7 @@ values ('ddhotel_8', 10, 3.5, '(613) 555-4030',
 insert into room
 values (101, 'ddhotel_8', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'ddhotel_8', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'ddhotel_8', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'ddhotel_8', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1268,7 +1268,7 @@ values ('hyahotel_1', 20, 4, '(613) 555-5029',
 insert into room
 values (101, 'hyahotel_1', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_1', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_1', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_1', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1313,7 +1313,7 @@ values ('hyahotel_2', 15, 4.5, '(613) 555-5024',
 insert into room
 values (101, 'hyahotel_2', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_2', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_2', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_2', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1348,7 +1348,7 @@ values ('hyahotel_3', 20, 3.5, '(613) 555-5025',
 insert into room
 values (101, 'hyahotel_3', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_3', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_3', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_3', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1393,7 +1393,7 @@ values ('hyahotel_4', 10, 4, '(613) 555-5026',
 insert into room
 values (101, 'hyahotel_4', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_4', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_4', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_4', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1418,7 +1418,7 @@ values ('hyahotel_5', 15, 4, '(613) 555-5027',
 insert into room
 values (101, 'hyahotel_5', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_5', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_5', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_5', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1453,7 +1453,7 @@ values ('hyahotel_6', 30, 5, '(613) 555-5028',
 insert into room
 values (101, 'hyahotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1483,7 +1483,7 @@ values (305, 'hyahotel_6', 159.80, null, true, '{TV, air conditioner}', 3, 'sea'
 insert into room
 values (401, 'hyahotel_6', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (402, 'hyahotel_6', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (402, 'hyahotel_6', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (403, 'hyahotel_6', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1518,7 +1518,7 @@ values ('hyahotel_7', 15, 4.5, '(613) 555-5031',
 insert into room
 values (101, 'hyahotel_7', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_7', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_7', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_7', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
@@ -1553,7 +1553,7 @@ values ('hyahotel_8', 10, 3, '(613) 555-5030',
 insert into room
 values (101, 'hyahotel_8', 109.80, null, true, '{TV, air conditioner}', 2, 'mountain');
 insert into room
-values (102, 'hyahotel_8', 109.80, 'small hole in wall', true, '{TV, air conditioner}', 2, 'sea');
+values (102, 'hyahotel_8', 109.80, '{small hole in wall}', true, '{TV, air conditioner}', 2, 'sea');
 insert into room
 values (103, 'hyahotel_8', 269.80, null, false, '{TV, air conditioner}', 5, 'mountain');
 insert into room
