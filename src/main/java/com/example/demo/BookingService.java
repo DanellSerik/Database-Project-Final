@@ -186,5 +186,44 @@ public class BookingService {
 
         return availableRooms;
     }
+
+    public ArrayList<Room> getAvailableRoomsByDates(String hotelId, Date checkInDate, Date checkOutDate) {
+        String query = "SELECT r.room_num, r.hotel_id, r.price, r.problems, r.extendable, r.amenities, r.capacity, r.view " +
+                "FROM room r " +
+                "LEFT JOIN booking b ON r.room_num = b.room_num AND r.hotel_id = b.hotel_id " +
+                "WHERE r.hotel_id = ? " +
+                "AND (b.booking_id IS NULL OR b.check_out_date <= ? OR b.check_in_date >= ?)";
+
+        ArrayList<Room> availableRooms = new ArrayList<>();
+
+        try (Connection db = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = db.prepareStatement(query)) {
+
+            pst.setString(1, hotelId);
+            pst.setDate(2, checkInDate);
+            pst.setDate(3, checkOutDate);
+
+            try (ResultSet rs = pst.executeQuery()) {
+                while (rs.next()) {
+
+                    short roomNum = rs.getShort("room_num");
+                    String hotelIdResult = rs.getString("hotel_id");
+                    double price = rs.getDouble("price");
+                    List<String> problems = (List<String>) rs.getArray("problems").getArray();
+                    boolean extendable = rs.getBoolean("extendable");
+                    List<String> amenities = (List<String>) rs.getArray("amenities").getArray();
+                    int capacity = rs.getInt("capacity");
+                    String view = rs.getString("view");
+
+                    Room room = new Room(roomNum, hotelIdResult, price, problems, extendable, amenities, capacity, view);
+                    availableRooms.add(room);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error retrieving available rooms: " + e.getMessage());
+        }
+
+        return availableRooms;
+    }
 }
 
