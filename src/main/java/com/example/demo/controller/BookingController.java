@@ -24,7 +24,7 @@ public class BookingController {
 
     // Add new booking
     @PostMapping("/add")
-    public String addBooking(@PathVariable Booking booking,@PathVariable Books books) {
+    public String addBooking(@RequestParam Booking booking,@RequestParam Books books) {
         try {
             bookingService.addBooking(booking, books);
             return "Booking added successfully!";
@@ -52,5 +52,14 @@ public class BookingController {
         } catch (Exception e) {
             return "Error removing booking: " + e.getMessage();
         }
+    }
+
+    @GetMapping("/getRoomsByDates")
+    public List<Room> getAvailableRoomsByDates(
+            @RequestParam String hotelId,
+            @RequestParam Date checkInDate,
+            @RequestParam Date checkOutDate
+    ) {
+        return bookingService.getAvailableRoomsByDates(hotelId, checkInDate, checkOutDate);
     }
 }
