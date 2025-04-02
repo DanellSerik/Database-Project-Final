@@ -34,9 +34,9 @@ public class BookingController {
     }
 
     // Get booking by bookingId
-    @GetMapping("getRooms")
-    public ArrayList<Room> getAvailableRooms() {
-        ArrayList<Room> rooms = bookingService.getAvailableRooms();
+    @GetMapping("/getRooms")
+    public ArrayList<Room> getAvailableRooms(@RequestParam String hotelId) {
+        ArrayList<Room> rooms = bookingService.getAvailableRooms(hotelId);
         if (rooms == null) {
             throw new RuntimeException("Booking not found!");
         }

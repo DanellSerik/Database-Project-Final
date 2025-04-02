@@ -132,45 +132,48 @@ public class BookingService {
         return rooms;
     }
 
-    public ArrayList<Room> getAvailableRooms() {
-        String query = "SELECT * FROM area_avail"; // Query the view
+    public ArrayList<Room> getAvailableRooms(String hotelId) {
+        // Query the view to get the number of available rooms for the specific hotel
+        String query = "SELECT * FROM area_avail WHERE hotel_id = ?"; // Filter by hotel_id
 
         ArrayList<Room> availableRooms = new ArrayList<>();
 
         try (Connection db = DriverManager.getConnection(url, user, password);
-             Statement stmt = db.createStatement();
-             ResultSet rs = stmt.executeQuery(query)) {
+             PreparedStatement stmt = db.prepareStatement(query)) {
 
-            while (rs.next()) {
-                // Extract data from the result set
-                String city = rs.getString("city");
-                String hotelId = rs.getString("hotel_id");
-                int availRooms = rs.getInt("avail_rooms");
+            // Set the hotelId parameter in the query
+            stmt.setString(1, hotelId);
 
-                // Now query the room table for each roomNum and its detailed info
-                for (int i = 0; i < availRooms; i++) {
-                    // You can use roomNum as a placeholder or generate dynamically if needed
-                    short roomNum = (short) (i + 1);  // For example: incrementing room numbers
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    // Extract data from the result set
+                    String city = rs.getString("city");
+                    int availRooms = rs.getInt("avail_rooms");
 
-                    // Query the room details for this roomNum and hotelId
-                    String roomDetailsQuery = "SELECT * FROM room WHERE hotel_id = ? AND room_num = ?";
-                    try (PreparedStatement pst = db.prepareStatement(roomDetailsQuery)) {
-                        pst.setString(1, hotelId);
-                        pst.setShort(2, roomNum);
+                    // Query the room table for each roomNum and its detailed info
+                    for (int i = 0; i < availRooms; i++) {
+                        short roomNum = (short) (i + 1); // Generate room numbers dynamically
 
-                        try (ResultSet roomRs = pst.executeQuery()) {
-                            if (roomRs.next()) {
-                                // Extract room details from the result set
-                                double price = roomRs.getDouble("price");
-                                ArrayList<String> problems = (ArrayList<String>) roomRs.getArray("problems").getArray();  // Assuming problems are stored as an array
-                                boolean extendable = roomRs.getBoolean("extendable");
-                                ArrayList<String> amenities = (ArrayList<String>) roomRs.getArray("amenities").getArray();  // Assuming amenities are stored as an array
-                                int capacity = roomRs.getInt("capacity");
-                                String view = roomRs.getString("view");
+                        // Query the room details for this roomNum and hotelId
+                        String roomDetailsQuery = "SELECT * FROM room WHERE hotel_id = ? AND room_num = ?";
+                        try (PreparedStatement pst = db.prepareStatement(roomDetailsQuery)) {
+                            pst.setString(1, hotelId);
+                            pst.setShort(2, roomNum);
 
-                                // Create a Room object with the detailed info
-                                Room room = new Room(roomNum, hotelId, price, problems, extendable, amenities, capacity, view);
-                                availableRooms.add(room);
+                            try (ResultSet roomRs = pst.executeQuery()) {
+                                if (roomRs.next()) {
+                                    // Extract room details from the result set
+                                    double price = roomRs.getDouble("price");
+                                    ArrayList<String> problems = (ArrayList<String>) roomRs.getArray("problems").getArray(); // Assuming problems are stored as an array
+                                    boolean extendable = roomRs.getBoolean("extendable");
+                                    ArrayList<String> amenities = (ArrayList<String>) roomRs.getArray("amenities").getArray(); // Assuming amenities are stored as an array
+                                    int capacity = roomRs.getInt("capacity");
+                                    String view = roomRs.getString("view");
+
+                                    // Create a Room object with the detailed info
+                                    Room room = new Room(roomNum, hotelId, price, problems, extendable, amenities, capacity, view);
+                                    availableRooms.add(room);
+                                }
                             }
                         }
                     }
@@ -183,6 +186,5 @@ public class BookingService {
 
         return availableRooms;
     }
-
 }
 

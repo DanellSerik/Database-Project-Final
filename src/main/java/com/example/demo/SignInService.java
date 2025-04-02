@@ -1,6 +1,9 @@
 package com.example.demo;
 
 import org.json.JSONObject;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Types;
 import org.json.JSONException;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +40,7 @@ public class SignInService {
             addressJson.put("country", customer.getAddress().getCountry());
 
             // Set address as JSON string in the PreparedStatement
-            pst.setString(6, addressJson.toString());
+            pst.setObject(6, addressJson.toString(), Types.OTHER);
 
             int rowsInserted = pst.executeUpdate();
             System.out.println(rowsInserted + " row(s) inserted successfully.");
