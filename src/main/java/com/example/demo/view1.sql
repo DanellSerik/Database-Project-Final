@@ -21,4 +21,4 @@ where
     (ra.renting_id is null or
      (ra.check_out_date <= current_date or ra.check_in_date >= current_date))
 group by
-    city, r.room_num, r.hotel_id;
+    city, r.room_num, h.hotel_id;
