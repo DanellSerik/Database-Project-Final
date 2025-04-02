@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.sql.SQLException;
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
@@ -36,19 +36,13 @@ public class CustomerController {
         }
     }
 
-    @GetMapping("getEmployee/{id}/{type}")
-    public Customer getCustomerById(@PathVariable String id, @PathVariable String type) {
-        try {
-            Customer customer = signInService.getCustomer(id, type);
-            if (customer == null) {
-                throw new RuntimeException("Customer not found.");
-            }
-            return customer;
-        } catch (Exception e) {
-            // Log the error and return a user-friendly message
-            System.out.println("Error fetching customer: " + e.getMessage());
-            throw new RuntimeException("Error fetching customer: " + e.getMessage());
+    @GetMapping("/getCustomer/{id}/{type}")
+    public ResponseEntity<?> getCustomerById(@PathVariable String id, @PathVariable String type) {
+        Customer customer = signInService.getCustomer(id, type);
+        if (customer == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Customer not found.");
         }
+        return ResponseEntity.ok(customer);
     }
 
     // Delete customer by ID and Type

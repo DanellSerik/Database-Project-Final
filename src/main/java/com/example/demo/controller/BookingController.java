@@ -1,9 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.Booking;
-import com.example.demo.BookingService;
-import com.example.demo.Books;
-import com.example.demo.Room;
+import com.example.demo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -61,5 +58,11 @@ public class BookingController {
             @RequestParam Date checkOutDate
     ) {
         return bookingService.getAvailableRoomsByDates(hotelId, checkInDate, checkOutDate);
+    }
+
+    @GetMapping("/getHotels")
+    public List<Hotel> getAvailableHotels() {
+        bookingService.getAvailableHotels();
+        return bookingService.getAvailableHotels();
     }
 }

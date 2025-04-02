@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -224,6 +226,45 @@ public class BookingService {
         }
 
         return availableRooms;
+    }
+
+    public List<Hotel> getAvailableHotels() {
+        String query = "SELECT * FROM hotel";
+
+        ArrayList<Hotel> availableHotels = new ArrayList<>();
+
+        try (Connection db = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = db.prepareStatement(query)) {
+
+            try (ResultSet rs = pst.executeQuery()) {
+                while (rs.next()) {
+                    String hotelId = rs.getString("hotel_id");
+                     int numRooms = rs.getInt("num_rooms");
+                    double starRating = rs.getDouble("star_rating");
+                    String phoneNum = rs.getString("phone_num");
+                    String email = rs.getString("email");
+
+                    String addressJson = rs.getString("address"); // Get address as JSON string
+                    JSONObject jsonObj = new JSONObject(addressJson); // Parse JSON
+
+                    // Now create an Address object from the JSON
+                    Address address = new Address(
+                            jsonObj.getString("street"),
+                            jsonObj.getString("city"),
+                            jsonObj.getString("province"),
+                            jsonObj.getString("postal"),
+                            jsonObj.getString("country")
+                    );
+
+                    Hotel hotel = new Hotel(hotelId, numRooms, starRating, phoneNum, address, email);
+                    availableHotels.add(hotel);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error retrieving available hotels: " + e.getMessage());
+        }
+
+        return availableHotels;
     }
 }
 
