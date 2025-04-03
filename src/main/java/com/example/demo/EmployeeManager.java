@@ -11,7 +11,7 @@ public class EmployeeManager {
 
     static String url = "jdbc:postgresql://localhost:5432/database_project";
     static String user = "postgres";
-    static String password = "your_password";
+    static String password = "Danell2005";
 
     public int addEmployee(Employee employee) throws SQLException {
         String query = "INSERT INTO employee (employee_id, id_type, first_name, last_name, address) VALUES (?, ?, ?, ?, ?)";

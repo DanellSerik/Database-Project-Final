@@ -33,7 +33,7 @@ public class EmployeeController {
     }
 
     // Add new employee
-    @PostMapping("/add")
+    @PostMapping("/addEmployee")
     public String addEmployee(@RequestBody Employee employee) {
         try {
             int result = employeeManager.addEmployee(employee);
