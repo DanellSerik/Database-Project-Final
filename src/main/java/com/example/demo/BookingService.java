@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookingService {
-    private static final String url = "jdbc:postgresql://localhost:5432/your_database";
+    private static final String url = "jdbc:postgresql://localhost:5432/database_project";
     private static final String user = "postgres";
     private static final String password = "Danell2005";
 
@@ -101,7 +101,7 @@ public class BookingService {
 
     public List<Room> getRoomsInHotel(String hotelId) {
         List<Room> rooms = new ArrayList<>();
-        String query = "SELECT * FROM room WHERE hotel_id = ?"; // Assuming the room table structure
+        String query = "SELECT * FROM room WHERE hotel_id = ?";
 
         try (Connection db = DriverManager.getConnection(url, user, password);
              PreparedStatement pst = db.prepareStatement(query)) {
@@ -110,19 +110,21 @@ public class BookingService {
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                // Extract each field from the ResultSet
                 short roomNum = rs.getShort("room_num");
                 String hotelIdFromDb = rs.getString("hotel_id");
                 double price = rs.getDouble("price");
-                Array problemsArray = rs.getArray("problems"); // Assuming 'problems' is a SQL array
-                List<String> problems = problemsArray != null ? (List<String>) problemsArray.getArray() : new ArrayList<>();
+
+                Array problemsArray = rs.getArray("problems");
+                List<String> problems = problemsArray != null ? Arrays.asList((String[]) problemsArray.getArray()) : new ArrayList<>();
+
                 boolean extendable = rs.getBoolean("extendable");
-                Array amenitiesArray = rs.getArray("amenities"); // Assuming 'amenities' is a SQL array
-                List<String> amenities = amenitiesArray != null ? (List<String>) amenitiesArray.getArray() : new ArrayList<>();
+
+                Array amenitiesArray = rs.getArray("amenities");
+                List<String> amenities = amenitiesArray != null ? Arrays.asList((String[]) amenitiesArray.getArray()) : new ArrayList<>();
+
                 int capacity = rs.getInt("capacity");
                 String view = rs.getString("view");
 
-                // Create a new Room object
                 Room room = new Room(roomNum, hotelIdFromDb, price, problems, extendable, amenities, capacity, view);
                 rooms.add(room);
             }
@@ -131,62 +133,8 @@ public class BookingService {
             System.out.println("Error fetching rooms: " + e.getMessage());
         }
 
+        System.out.println("Rooms fetched: " + rooms.size());
         return rooms;
-    }
-
-    public ArrayList<Room> getAvailableRooms(String hotelId) {
-        // Query the view to get the number of available rooms for the specific hotel
-        String query = "SELECT * FROM area_avail WHERE hotel_id = ?"; // Filter by hotel_id
-
-        ArrayList<Room> availableRooms = new ArrayList<>();
-
-        try (Connection db = DriverManager.getConnection(url, user, password);
-             PreparedStatement stmt = db.prepareStatement(query)) {
-
-            // Set the hotelId parameter in the query
-            stmt.setString(1, hotelId);
-
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    // Extract data from the result set
-                    String city = rs.getString("city");
-                    int availRooms = rs.getInt("avail_rooms");
-
-                    // Query the room table for each roomNum and its detailed info
-                    for (int i = 0; i < availRooms; i++) {
-                        short roomNum = (short) (i + 1); // Generate room numbers dynamically
-
-                        // Query the room details for this roomNum and hotelId
-                        String roomDetailsQuery = "SELECT * FROM room WHERE hotel_id = ? AND room_num = ?";
-                        try (PreparedStatement pst = db.prepareStatement(roomDetailsQuery)) {
-                            pst.setString(1, hotelId);
-                            pst.setShort(2, roomNum);
-
-                            try (ResultSet roomRs = pst.executeQuery()) {
-                                if (roomRs.next()) {
-                                    // Extract room details from the result set
-                                    double price = roomRs.getDouble("price");
-                                    ArrayList<String> problems = (ArrayList<String>) roomRs.getArray("problems").getArray(); // Assuming problems are stored as an array
-                                    boolean extendable = roomRs.getBoolean("extendable");
-                                    ArrayList<String> amenities = (ArrayList<String>) roomRs.getArray("amenities").getArray(); // Assuming amenities are stored as an array
-                                    int capacity = roomRs.getInt("capacity");
-                                    String view = roomRs.getString("view");
-
-                                    // Create a Room object with the detailed info
-                                    Room room = new Room(roomNum, hotelId, price, problems, extendable, amenities, capacity, view);
-                                    availableRooms.add(room);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Error retrieving available rooms: " + e.getMessage());
-        }
-
-        return availableRooms;
     }
 
     public ArrayList<Room> getAvailableRoomsByDates(String hotelId, Date checkInDate, Date checkOutDate) {
