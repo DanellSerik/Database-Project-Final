@@ -1,11 +1,16 @@
 package com.example.demo;
 
-public class Books {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+public class Books {
+    @JsonProperty ("customer_id")
     String customer_id;
+    @JsonProperty ("id_type")
     String id_type;
     String booking_id;
+    @JsonProperty ("roomNum")
     int room_num;
+    @JsonProperty ("hotelId")
     String hotel_id;
 
     public Books(String customer_id, String id_type, String booking_id, int room_num, String hotel_id) {

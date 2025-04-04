@@ -1,12 +1,27 @@
-create table booking (
-    booking_id char(10),
-    check_in_date date,
-    check_out_date date,
-    room_num    SMALLINT,
-    hotel_id    CHAR(10) NOT NULL,
-    primary key (booking_id, room_num, hotel_id),
-    foreign key (room_num, hotel_id) references room(room_num, hotel_id)
+CREATE SEQUENCE booking_id_seq;
+
+CREATE TABLE booking (
+                         booking_id CHAR(10),
+                         check_in_date DATE,
+                         check_out_date DATE,
+                         room_num SMALLINT,
+                         hotel_id CHAR(10) NOT NULL,
+                         PRIMARY KEY (booking_id, room_num, hotel_id),
+                         FOREIGN KEY (room_num, hotel_id) REFERENCES room(room_num, hotel_id)
 );
+
+CREATE OR REPLACE FUNCTION gen_booking_id()
+    RETURNS TRIGGER AS $$
+BEGIN
+    NEW.booking_id := LPAD(NEXTVAL('booking_id_seq')::TEXT, 10, '0');
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_gen_booking_id
+    BEFORE INSERT ON booking
+    FOR EACH ROW
+EXECUTE FUNCTION gen_booking_id();
 
 create table books
 (

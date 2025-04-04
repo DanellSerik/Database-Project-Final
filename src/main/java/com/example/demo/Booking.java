@@ -10,10 +10,9 @@ public class Booking {
     private Date checkOutDate;
 
     // Constructor
-    public Booking(String bookingId, int roomNum, String hotelId, Date checkInDate, Date checkOutDate) {
+    public Booking(String bookingId,int roomNum, String hotelId, Date checkInDate, Date checkOutDate) {
         this.roomNum = roomNum;
         this.hotelId = hotelId;
-        this.bookingId = bookingId;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
     }

@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
@@ -19,14 +21,19 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    // Add new booking
-    @PostMapping("/add")
-    public String addBooking(@RequestParam Booking booking,@RequestParam Books books) {
+    @PostMapping("/bookRoom")
+    public ResponseEntity<String> addBooking(@RequestBody BookingRequest bookingRequest) {
         try {
+            Booking booking = bookingRequest.getBooking();
+            Books books = bookingRequest.getBooks();
+
+            System.out.println("Booking: " + booking);
+            System.out.println("Books: " + books);
+
             bookingService.addBooking(booking, books);
-            return "Booking added successfully!";
+            return ResponseEntity.ok("Room booked successfully");
         } catch (Exception e) {
-            return "Error adding booking: " + e.getMessage();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid request: " + e.getMessage());
         }
     }
 
