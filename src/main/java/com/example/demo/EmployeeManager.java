@@ -4,6 +4,7 @@ import java.sql.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -147,4 +148,32 @@ public class EmployeeManager {
         }
     }
 
+    public boolean addHotel(Hotel hotel) {
+        String query = "INSERT INTO hotel (hotel_id, num_rooms, star_rating, phone_num, address, email) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection db = DriverManager.getConnection(url, user, password);
+             PreparedStatement pst = db.prepareStatement(query)) {
+
+            // Validate the input
+            if (hotel == null || hotel.getHotelId() == null || hotel.getAddress() == null) {
+                throw new IllegalArgumentException("Hotel data is incomplete");
+            }
+
+            // Set the parameters for the query
+            pst.setString(1, hotel.getHotelId());
+            pst.setInt(2, hotel.getNumRooms());
+            pst.setDouble(3, hotel.getStarRating());
+            pst.setString(5, hotel.getPhoneNum());
+            pst.setString(3, hotel.getAddress().toString()); // Assuming address is a JSON or string representation
+            pst.setString(4, hotel.getEmail());
+
+            // Execute the query
+            int rowsAffected = pst.executeUpdate();
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Error adding hotel: " + e.getMessage());
+            return false;
+        }
+    }
 }

@@ -2,8 +2,16 @@ package com.example.demo.controller;
 
 import com.example.demo.Employee;
 import com.example.demo.EmployeeManager;
+import com.example.demo.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 @RestController
 @RequestMapping("/api/employees")
@@ -55,6 +63,24 @@ public class EmployeeController {
             // Log the error and return a user-friendly message
             System.out.println("Error removing employee: " + e.getMessage());
             return "Error removing employee: " + e.getMessage();
+        }
+    }
+
+    @PostMapping("/addHotel")
+    public ResponseEntity<String> addHotel(@RequestBody Hotel hotel) {
+        try {
+            // Call the BookingService to handle the logic
+            boolean isAdded = employeeManager.addHotel(hotel);
+            if (isAdded) {
+                return ResponseEntity.ok("Hotel added successfully");
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add hotel");
+            }
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body("Invalid hotel data: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Error adding hotel: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred: " + e.getMessage());
         }
     }
 }
